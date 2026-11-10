@@ -1,0 +1,2 @@
+# third-party dependency of the figure renderer; numpy comes in with matplotlib
+matplotlib>=3.5

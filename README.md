@@ -52,7 +52,7 @@ python3 code/02_plot_circos.py    # 渲染 output/figure.{png,svg,pdf}
 python3 code/03_verify.py         # 129 项一致性检查，失败即非零退出
 ```
 
-依赖：Python 3.9+、matplotlib、numpy。**不需要 R、不需要 circlize、不需要 GPU、不联网也能重画**
+依赖：Python 3.9+、matplotlib（`pip install -r requirements.txt`）。**不需要 R、不需要 circlize、不需要 GPU、不联网也能重画**
 （第一次运行会下载两个原始文件，之后离线可重复）。
 
 ## 数据处理的两条规则
@@ -92,7 +92,7 @@ python3 code/03_verify.py         # 129 项一致性检查，失败即非零退�
 
 ```
 code/01_prepare_data.py   抓取、解析、生成 data/processed/*.tsv
-code/02_plot_circos.py    单文件渲染器（matplotlib，353 行）
+code/02_plot_circos.py    单文件渲染器（matplotlib，386 行）
 code/03_verify.py         一致性校验
 data/raw/                 两个原始文件（KEGG 快照、figshare 表）
 data/processed/           ko_selected.tsv / ko_links.tsv / class_summary.tsv
@@ -106,5 +106,7 @@ run.sh                    一键复现
 ## 发布到 git 时的注意事项
 
 - figshare 表是 CC BY 4.0，可以随仓库分发，请保留出处与作者署名。
+- 代码与图采用 MIT 许可（见 `LICENSE`）；上游数据各自保留原授权：figshare 表为 CC BY 4.0，
+  KEGG 数据版权归 Kanehisa Laboratories、限学术用途，因此未随仓库分发。
 - KEGG 快照建议**不要**提交：让 `run.sh` 重新抓取，既不违反 KEGG 的分发条款，也正好证明脚本能独立取数。
   若 KEGG 更新了 `ko00001`，`03_verify.py` 会因为 sha256 不符而报警——那是数据源变了，不是图错了。
