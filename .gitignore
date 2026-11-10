@@ -3,3 +3,4 @@ __pycache__/
 # KEGG snapshot is re-fetched by run.sh instead of being redistributed
 data/raw/ko00001.keg
 docs/
+video/

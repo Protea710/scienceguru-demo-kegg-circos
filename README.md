@@ -50,19 +50,6 @@
 
 </details>
 
-## 动效脚本（84 秒）
-
-`video/scene.html` 把这张图从原始丰度表一路长出来：表格 → 单个 KO → 48 个 KO 立到圆周 →
-功能类分两色并长出弦 → 两个主题数字 → 收成这张图。**最后一帧淡入的就是 `output/figure.png` 本体**，
-手绘部分与它的圆心、外环半径按像素对齐，所以过渡没有重影。
-
-双击打开即可播放（数据已内嵌，不联网）。空格暂停、`R` 重播、`H` 隐藏控制条；
-`?t=28` 直接跳到第四幕、`?t=53` 跳到第六幕，方便单独重录某一段。
-
-```bash
-python3 video/build_scene.py    # 改完数据后重新生成 video/scene.html
-```
-
 ## 30 秒复现
 
 ![30 秒复现](assets/repro.gif)
@@ -170,7 +157,6 @@ data/processed/           ko_selected.tsv / ko_links.tsv / class_summary.tsv
 data/provenance.json      来源、授权、sha256、推导说明
 output/figure.png|svg|pdf
 assets/                   参考图、两版对比图、30 秒复现 GIF
-video/                    84 秒动效脚本（HTML，可直接录屏）
 archive/v1/               第一版的脚本与图片（可重跑）
 archive/mid/              第二轮中途的图像（仅图像，不可重跑）
 run.sh                    一键复现
