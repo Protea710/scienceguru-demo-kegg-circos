@@ -120,7 +120,7 @@ def radial_text(ax, t, r, s, **kw):
     return ax.text(x, y, s, rotation=rot, rotation_mode="anchor", ha=ha, **kw)
 
 
-def chord(ax, t0, r0, t1, r1, color, lw, alpha):
+def chord(ax, t0, r0, t1, r1, color, lw, alpha, gid=None):
     p0, p1 = xy(t0, r0), xy(t1, r1)
     c0, c1 = xy(t0, r0 * 0.34), xy(t1, r1 * 0.34)
     path = MPath(
@@ -135,6 +135,7 @@ def chord(ax, t0, r0, t1, r1, color, lw, alpha):
             alpha=alpha,
             capstyle="round",
             zorder=1,
+            gid=gid,
         )
     )
 
@@ -160,6 +161,7 @@ def render(ax, kos, links, classes, ko_ang, cl_ang, norm, max_deg):
                 edgecolor=GROUP_EDGE[c["group"]],
                 lw=0.9,
                 zorder=0,
+                gid=f'track-{c["class_code"]}',
             )
         )
 
@@ -182,10 +184,11 @@ def render(ax, kos, links, classes, ko_ang, cl_ang, norm, max_deg):
                     edgecolor="white",
                     lw=0.45,
                     zorder=3,
+                    gid=f'bar-{c["class_code"]}-{i}',
                 )
             )
 
-    for k in kos:
+    for ki, k in enumerate(kos):
         t0, t1 = ko_ang[k["KO"]]
         for i, s in enumerate(SAMPLE_NAMES):
             r0 = R_HEAT + (2 - i) * ROW_H
@@ -200,6 +203,7 @@ def render(ax, kos, links, classes, ko_ang, cl_ang, norm, max_deg):
                     edgecolor="white",
                     lw=0.4,
                     zorder=3,
+                    gid=f"cell-{ki}-{i}",
                 )
             )
 
@@ -212,8 +216,9 @@ def render(ax, kos, links, classes, ko_ang, cl_ang, norm, max_deg):
             fontsize=KO_FONT,
             color="#2A2A2A",
             zorder=4,
+            gid=f"kolab-{i}",
         )
-        for k in kos
+        for i, k in enumerate(kos)
     ]
 
     by_class, by_ko = {}, {}
@@ -240,6 +245,7 @@ def render(ax, kos, links, classes, ko_ang, cl_ang, norm, max_deg):
             LINK_COLOR[l["group"]],
             lw,
             0.48,
+            gid=f"chord-{i}",
         )
 
     for i, c in enumerate(classes):
@@ -263,15 +269,16 @@ def render(ax, kos, links, classes, ko_ang, cl_ang, norm, max_deg):
             fontsize=CLASS_FONT,
             color="#2A2A2A",
             zorder=5,
+            gid=f'clab-{c["class_code"]}',
         )
 
     # editorial header, top left
     ax.text(LX, 1.412, TITLE_A, fontsize=15.5, fontweight="bold", color=INK,
-            ha="left", va="top")
+            ha="left", va="top", gid="head-title")
     ax.text(LX, 1.328, TITLE_B, fontsize=15.5, fontweight="bold", color=INK,
             ha="left", va="top")
-    ax.text(LX, 1.178, SUBTITLE, fontsize=9.4, color="#3F3F3F", ha="left", va="top")
-    ax.text(LX, 1.088, NOTE_1, fontsize=7.0, color=MUTED, ha="left", va="top")
+    ax.text(LX, 1.178, SUBTITLE, fontsize=9.4, color="#3F3F3F", ha="left", va="top", gid="head-sub")
+    ax.text(LX, 1.088, NOTE_1, fontsize=7.0, color=MUTED, ha="left", va="top", gid="head-note")
     ax.text(LX, 1.048, NOTE_2, fontsize=7.0, color=MUTED, ha="left", va="top")
 
     # legend strip, bottom — every dimension is multiplied by LEG_SCALE
@@ -279,39 +286,39 @@ def render(ax, kos, links, classes, ko_ang, cl_ang, norm, max_deg):
     for i, (nm, tag) in enumerate(zip(SAMPLE_NAMES, SAMPLE_TAG)):
         y = -0.760 - i * 0.062
         ax.add_patch(Rectangle((LX, y), 0.040 * K, 0.040 * K,
-                               facecolor=SAMPLE_COLORS[i], edgecolor="none", zorder=6))
+                               facecolor=SAMPLE_COLORS[i], edgecolor="none", zorder=6, gid="leg"))
         ax.text(LX + 0.062, y + 0.020 * K, nm, fontsize=8.6 * K,
                 fontweight="bold", va="center", color=INK)
         ax.text(LX + 0.230, y + 0.020 * K, tag, fontsize=8.6 * K,
-                va="center", color="#3A3A3A")
+                va="center", color="#3A3A3A", gid="leg")
 
     x0, y0, w, h = LX, -1.005, 0.52 * K, 0.026 * K
     for i in range(160):
         v = norm.inverse(0.02 + 0.96 * i / 159)
         ax.add_patch(Rectangle((x0 + w * i / 160, y0), w / 160 * 1.07 + 0.0006, h,
-                               facecolor=CMAP(norm(v)), edgecolor="none", zorder=6))
+                               facecolor=CMAP(norm(v)), edgecolor="none", zorder=6, gid="cb"))
     ax.add_patch(Rectangle((x0, y0), w, h, facecolor="none",
-                           edgecolor="#C9C9C9", lw=0.5, zorder=7))
+                           edgecolor="#C9C9C9", lw=0.5, zorder=7, gid="cb"))
     for label, frac in ((f"{norm.vmin:.2f}%", 0.0), (f"{norm.vcenter:.2f}%", 0.5),
                         (f"{norm.vmax:.2f}%", 1.0)):
         px = x0 + w * frac
-        ax.plot([px, px], [y0 - 0.014 * K, y0], color=INK, lw=0.6, zorder=7)
+        ax.plot([px, px], [y0 - 0.014 * K, y0], color=INK, lw=0.6, zorder=7, gid="cbt")
         ax.text(px, y0 - 0.024 * K, label, fontsize=7.0 * K, ha="center",
                 va="top", color="#2A2A2A")
     ax.text(x0, y0 + h + 0.014 * K, "Relative abundance per sample", fontsize=7.8 * K,
-            fontweight="bold", va="bottom", color=INK)
+            fontweight="bold", va="bottom", color=INK, gid="cbt")
 
     sx, sy, sw = -0.70, y0, 0.44 * K
-    ax.plot([sx, sx + sw], [sy, sy], color=INK, lw=0.8, zorder=6)
+    ax.plot([sx, sx + sw], [sy, sy], color=INK, lw=0.8, zorder=6, gid="deg")
     for v in range(0, max_deg + 1, 5):
         px = sx + sw * v / max_deg
-        ax.plot([px, px], [sy, sy + 0.020 * K], color=INK, lw=0.7, zorder=6)
+        ax.plot([px, px], [sy, sy + 0.020 * K], color=INK, lw=0.7, zorder=6, gid="deg")
         ax.text(px, sy - 0.022 * K, str(v), fontsize=7.0 * K, ha="center",
                 va="top", color="#2A2A2A")
     ax.text(sx, sy + 0.034 * K, "Connection degree", fontsize=7.8 * K,
-            fontweight="bold", va="bottom", color=INK)
+            fontweight="bold", va="bottom", color=INK, gid="deg")
 
-    ax.text(LX, -1.085, CREDIT, fontsize=6.8 * K, color=MUTED, ha="left", va="top")
+    ax.text(LX, -1.085, CREDIT, fontsize=6.8 * K, color=MUTED, ha="left", va="top", gid="cred")
 
     return ko_labels
 
