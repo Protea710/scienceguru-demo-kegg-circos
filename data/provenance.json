@@ -1,0 +1,39 @@
+{
+  "figure": "KEGG KO circos demo",
+  "sources": [
+    {
+      "role": "KO -> pathway class hierarchy (level-1/2/3 + KO of ko00001)",
+      "url": "https://rest.kegg.jp/get/br:ko00001",
+      "file": "data/raw/ko00001.keg",
+      "sha256": "52e0e3813133e4475c55ac099d615ba358df2be38994fea1c41439a1ea7ee149",
+      "bytes": 4338052,
+      "note": "KEGG REST snapshot; KEGG data are (c) Kanehisa Laboratories, academic use."
+    },
+    {
+      "role": "KEGG ortholog abundance profile (94 columns x 9437 KO rows)",
+      "url": "https://figshare.com/articles/dataset/KEGG_KO_abundance_Mollisols_MR_SR_CT/29645648",
+      "download": "https://ndownloader.figshare.com/files/56550593",
+      "doi": "10.6084/m9.figshare.29645648.v1",
+      "license": "CC BY 4.0",
+      "file": "data/raw/kegg_KO_profile.xls",
+      "sha256": "a3fbbbe466bbf4a1d307c2c1619966224a7c175e2763f93d60278a4ec175dfac",
+      "bytes": 3694458,
+      "note": "Mollisols metagenomes; sample id = site letter + treatment letter + replicate."
+    }
+  ],
+  "derivation": {
+    "samples_used": [
+      "LA1",
+      "LB1",
+      "LC1"
+    ],
+    "sample_meaning": "site L; A = chemical fertilizer only, B = manure, C = straw amendment",
+    "n_samples_in_source": 90,
+    "n_ko_in_source": 9437,
+    "n_ko_with_class_in_scope": 4138,
+    "n_ko_selected": 48,
+    "selection_rule": "top 4 KOs per class by mean relative abundance, cap 52, sorted by KO id",
+    "relative_abundance": "per-sample percentage over the KO rows that belong to the 17 plotted classes",
+    "simulated_values": false
+  }
+}

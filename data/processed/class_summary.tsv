@@ -1,0 +1,18 @@
+class_code	class_name	n_links	n_ko_total_in_kegg	sum_rel_abund_LA1	sum_rel_abund_LB1	sum_rel_abund_LC1	group
+09104	Nucleotide metabolism	5	218	1.912935	1.896484	1.879932	Metabolism
+09102	Energy metabolism	6	557	2.182058	2.172061	2.218504	Metabolism
+09101	Carbohydrate metabolism	8	729	2.781019	2.804531	2.808760	Metabolism
+09106	Metabolism of other amino acids	6	190	1.624135	1.670977	1.621596	Metabolism
+09105	Amino acid metabolism	8	636	2.813385	2.795814	2.831142	Metabolism
+09111	Xenobiotics biodegradation	4	365	0.981966	0.975399	0.973697	Metabolism
+09103	Lipid metabolism	5	268	1.801462	1.940459	1.799803	Metabolism
+09122	Translation	4	225	1.200332	1.164106	1.221476	Other
+09124	Replication and repair	5	141	1.602612	1.588273	1.633420	Other
+09123	Folding, sorting and degradation	4	150	1.098739	1.024466	1.163411	Other
+09131	Membrane transport	5	516	2.113552	2.203847	2.012531	Other
+09132	Signal transduction	5	584	1.487686	1.511586	1.497337	Other
+09143	Cell growth and death	6	147	2.782545	2.839171	2.796408	Other
+09145	Cellular community - prokaryotes	9	297	4.835543	5.525896	4.502568	Other
+09149	Aging	4	27	1.657063	1.638728	1.642394	Other
+09171	Infectious disease: bacterial	4	122	1.015777	0.940141	1.065545	Other
+09175	Drug resistance: antimicrobial	4	89	0.776128	0.760692	0.755795	Other

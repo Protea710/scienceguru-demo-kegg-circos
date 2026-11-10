@@ -1,0 +1,93 @@
+KO	class_code	class_name	connection_degree	group
+K00036	09101	Carbohydrate metabolism	5	Metabolism
+K00036	09106	Metabolism of other amino acids	5	Metabolism
+K00059	09103	Lipid metabolism	4	Metabolism
+K00128	09101	Carbohydrate metabolism	16	Metabolism
+K00128	09103	Lipid metabolism	16	Metabolism
+K00128	09105	Amino acid metabolism	16	Metabolism
+K00128	09106	Metabolism of other amino acids	16	Metabolism
+K00128	09111	Xenobiotics biodegradation	16	Metabolism
+K00239	09101	Carbohydrate metabolism	5	Metabolism
+K00239	09102	Energy metabolism	5	Metabolism
+K00239	09171	Infectious disease: bacterial	5	Other
+K00249	09103	Lipid metabolism	4	Metabolism
+K00249	09105	Amino acid metabolism	4	Metabolism
+K00384	09106	Metabolism of other amino acids	1	Metabolism
+K00525	09104	Nucleotide metabolism	3	Metabolism
+K00548	09105	Amino acid metabolism	6	Metabolism
+K00548	09106	Metabolism of other amino acids	6	Metabolism
+K00626	09101	Carbohydrate metabolism	13	Metabolism
+K00626	09102	Energy metabolism	13	Metabolism
+K00626	09103	Lipid metabolism	13	Metabolism
+K00626	09105	Amino acid metabolism	13	Metabolism
+K00626	09111	Xenobiotics biodegradation	13	Metabolism
+K00626	09132	Signal transduction	13	Other
+K00681	09106	Metabolism of other amino acids	4	Metabolism
+K00962	09123	Folding, sorting and degradation	4	Other
+K00962	09124	Replication and repair	4	Other
+K01139	09104	Nucleotide metabolism	2	Metabolism
+K01338	09143	Cell growth and death	2	Other
+K01426	09105	Amino acid metabolism	5	Metabolism
+K01426	09111	Xenobiotics biodegradation	5	Metabolism
+K01652	09101	Carbohydrate metabolism	4	Metabolism
+K01652	09105	Amino acid metabolism	4	Metabolism
+K01681	09101	Carbohydrate metabolism	3	Metabolism
+K01681	09102	Energy metabolism	3	Metabolism
+K01768	09104	Nucleotide metabolism	4	Metabolism
+K01768	09143	Cell growth and death	4	Other
+K01768	09145	Cellular community - prokaryotes	4	Other
+K01768	09149	Aging	4	Other
+K01869	09122	Translation	4	Other
+K01870	09122	Translation	3	Other
+K01873	09122	Translation	3	Other
+K01895	09101	Carbohydrate metabolism	7	Metabolism
+K01895	09102	Energy metabolism	7	Metabolism
+K01897	09103	Lipid metabolism	11	Metabolism
+K01897	09143	Cell growth and death	11	Other
+K01897	09145	Cellular community - prokaryotes	11	Other
+K01915	09101	Carbohydrate metabolism	10	Metabolism
+K01915	09102	Energy metabolism	10	Metabolism
+K01915	09105	Amino acid metabolism	10	Metabolism
+K01915	09132	Signal transduction	10	Other
+K01915	09143	Cell growth and death	10	Other
+K01921	09106	Metabolism of other amino acids	4	Metabolism
+K01921	09175	Drug resistance: antimicrobial	4	Other
+K01951	09104	Nucleotide metabolism	3	Metabolism
+K01951	09111	Xenobiotics biodegradation	3	Metabolism
+K01955	09104	Nucleotide metabolism	3	Metabolism
+K01955	09105	Amino acid metabolism	3	Metabolism
+K01971	09124	Replication and repair	2	Other
+K01997	09131	Membrane transport	3	Other
+K01997	09145	Cellular community - prokaryotes	3	Other
+K01998	09131	Membrane transport	3	Other
+K01998	09145	Cellular community - prokaryotes	3	Other
+K01999	09131	Membrane transport	3	Other
+K01999	09145	Cellular community - prokaryotes	3	Other
+K02035	09145	Cellular community - prokaryotes	2	Other
+K02274	09102	Energy metabolism	1	Metabolism
+K02337	09124	Replication and repair	5	Other
+K02433	09122	Translation	2	Other
+K03070	09123	Folding, sorting and degradation	4	Other
+K03070	09131	Membrane transport	4	Other
+K03070	09145	Cellular community - prokaryotes	4	Other
+K03596	09171	Infectious disease: bacterial	1	Other
+K03657	09124	Replication and repair	4	Other
+K03695	09149	Aging	2	Other
+K03701	09124	Replication and repair	2	Other
+K04043	09123	Folding, sorting and degradation	8	Other
+K04043	09143	Cell growth and death	8	Other
+K04043	09149	Aging	8	Other
+K04043	09171	Infectious disease: bacterial	8	Other
+K04077	09123	Folding, sorting and degradation	11	Other
+K04077	09143	Cell growth and death	11	Other
+K04077	09149	Aging	11	Other
+K04077	09171	Infectious disease: bacterial	11	Other
+K04771	09132	Signal transduction	4	Other
+K04771	09175	Drug resistance: antimicrobial	4	Other
+K05366	09175	Drug resistance: antimicrobial	4	Other
+K05515	09175	Drug resistance: antimicrobial	3	Other
+K07793	09132	Signal transduction	2	Other
+K10112	09131	Membrane transport	2	Other
+K10914	09132	Signal transduction	6	Other
+K10914	09145	Cellular community - prokaryotes	6	Other
+K20276	09145	Cellular community - prokaryotes	1	Other

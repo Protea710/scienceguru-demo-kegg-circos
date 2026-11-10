@@ -1,0 +1,5 @@
+__pycache__/
+.DS_Store
+# KEGG snapshot is re-fetched by run.sh instead of being redistributed
+data/raw/ko00001.keg
+docs/
