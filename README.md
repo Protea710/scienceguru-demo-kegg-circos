@@ -37,6 +37,19 @@
 第一版的脚本与图片存档在 `archive/v1/`，`python3 archive/v1/02_plot_circos_v1.py` 可直接重跑，
 图像与当时逐字节一致。
 
+<details>
+<summary>可选：第二轮进行到一半时的中间版</summary>
+
+![中间版](archive/mid/figure.png)
+
+画布自动拟合、两级标题、新的轨道对比度、径向 KO 编号——这些已经改好；但样本图例仍是横排、
+整块按 2/3 缩放，功能类标签仍是粗体双层。此后才把图例调到 0.78、样本竖排到左下、标签换成细体单层。
+
+这一版只留下图像（`archive/mid/`），当时的代码状态没有单独存档，无法逐字节重跑——放它进来是为了让
+两轮之间不是一步跳跃。
+
+</details>
+
 ## 30 秒复现
 
 ![30 秒复现](assets/repro.gif)
@@ -145,6 +158,7 @@ data/provenance.json      来源、授权、sha256、推导说明
 output/figure.png|svg|pdf
 assets/                   参考图、两版对比图、30 秒复现 GIF
 archive/v1/               第一版的脚本与图片（可重跑）
+archive/mid/              第二轮中途的图像（仅图像，不可重跑）
 run.sh                    一键复现
 
 说明：写作用稿与录屏分镜保存在本地 `docs/`，未随本仓库发布。
